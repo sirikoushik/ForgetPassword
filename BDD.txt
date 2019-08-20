@@ -1,0 +1,35 @@
+Feature: Forget Password
+
+Scenario: Invalid Credentials
+Given User is on 'Forget Password' Page
+When user enters invalid Email
+Then display 'Please Enter Valid Credentials' 
+
+Scenario: Invalid Credentials
+Given User is on 'Forget Password' Page
+When user enters invalid First Name
+Then display 'Please Enter Valid Credentials' 
+
+Scenario: Invalid Credentials
+Given User is on 'Forget Password' Page
+When user enters invalid Phone Number
+Then display 'Please Enter Valid Credentials' 
+
+Scenario: Valid Details
+Given User is on 'Forget Password' Page
+When user enters valid details
+Then display 'Set Password' Page
+
+Scenario: Invalid Password
+Given User is on 'Forget Password' Page
+When user enters new Password and Confirm Password
+And new Password and Confirm Password are not same
+Then display 'Passwords doesn't match'
+
+Scenario: Valid Password
+Given User is on 'Forget Password' Page
+When user enters new Password and Confirm Password
+And new Password and Confirm Password are same
+Then display 'Passwords changed Successfully'
+
+ 
